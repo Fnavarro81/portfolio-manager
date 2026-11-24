@@ -3,9 +3,9 @@ package com.pluralsight.portfoliomanager;
 import com.pluralsight.portfoliomanager.model.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class FinanceApplication {
-
     public static void main(String[] args) {
         House house = new House("Ranch house", new BigDecimal("325000.00"), 1998, 1850, 3);
         Gold gold = new Gold("Gold coins", new BigDecimal("12000.00"), 5.0);
@@ -21,6 +21,24 @@ public class FinanceApplication {
         account1.deposit(BigDecimal.valueOf(100));
         //account2.deposit(100);
 
+        House house1 = new House("Ram Ranch", new BigDecimal("3250000.00"), 2016, 4500, 18);
+        Gold gold1 = new Gold("Schemckles", new BigDecimal("500.00"), 4);
+        Jewelry ring1 = new Jewelry("Eye of Agammoto", new BigDecimal("100000000000000.00"), 48);
+        BankAccount bankAccount1 = new BankAccount(123456, "Peter", new BigDecimal("69.00"));
+        CreditCard creditCard1 = new CreditCard(1234, "Peter's card", new BigDecimal("23.45"));
+
+        Portfolio portfolio1 = new Portfolio("Peter's portfolio", "Peter", new ArrayList<>());
+        portfolio1.add(house1);
+        portfolio1.add(gold1);
+        portfolio1.add(ring1);
+        portfolio1.add(bankAccount1);
+        portfolio1.add(creditCard1);
+
+        System.out.println(portfolio1.getValue());
+
+        Valuable mostValuable = portfolio1.getMostValuable();
+
+        System.out.println(mostValuable.getValue());
 
     }
 }

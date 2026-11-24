@@ -55,4 +55,19 @@ public class Portfolio {
         }
         return total;
     }
+
+    public Valuable getMostValuable() {
+        if (items == null || items.isEmpty()) {
+            return null;
+        }
+        Valuable currentHighestValue = items.get(0);
+        for (Valuable item : items) {
+            if (item != null && item.getValue() != null) {
+                if (currentHighestValue == null || currentHighestValue.getValue() == null || item.getValue().compareTo(currentHighestValue.getValue()) > 0) {
+                    currentHighestValue = item;
+                }
+            }
+        }
+        return currentHighestValue;
+    }
 }
