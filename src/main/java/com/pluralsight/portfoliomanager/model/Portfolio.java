@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
-public class Portfolio {
+public class Portfolio implements Valuable{
     private String name;
     private String owner;
     private List<Valuable> items;
