@@ -70,4 +70,19 @@ public class Portfolio {
         }
         return currentHighestValue;
     }
+
+    public Valuable getLeastValuable() {
+        if (items == null || items.isEmpty()) {
+            return null;
+        }
+        Valuable currentLowestValue = items.get(0);
+        for (Valuable item : items) {
+            if (item != null && item.getValue() != null) {
+                if (currentLowestValue == null || currentLowestValue.getValue() == null || item.getValue().compareTo(currentLowestValue.getValue()) < 0) {
+                    currentLowestValue = item;
+                }
+            }
+        }
+        return currentLowestValue;
+    }
 }

@@ -37,8 +37,10 @@ public class FinanceApplication {
         System.out.println(portfolio1.getValue());
 
         Valuable mostValuable = portfolio1.getMostValuable();
+        Valuable leastValuable = portfolio1.getLeastValuable();
 
         System.out.println(mostValuable.getValue());
+        System.out.println(leastValuable.getValue());
 
     }
 }
